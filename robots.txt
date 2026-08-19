@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://senplacide.github.io/placide-portfolio/sitemap.xml
