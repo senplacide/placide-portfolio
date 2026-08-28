@@ -939,6 +939,13 @@ section h2 {
     margin-bottom: 18px;
 }
 
+.project-notice {
+    font-size: 0.82rem;
+    color: var(--text-dim);
+    border-left: 3px solid var(--accent);
+    padding-left: 12px;
+}
+
 .project-tags {
     margin-bottom: 22px;
 }
