@@ -1204,6 +1204,289 @@ section h2 {
 
 
 /* =========================================
+   CERTIFICATIONS
+========================================= */
+
+.certifications-section {
+    background:
+        radial-gradient(900px 400px at 85% 0%, rgba(56, 189, 248, 0.06), transparent 55%),
+        linear-gradient(180deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
+}
+
+.certifications-grid {
+    max-width: 720px;
+    margin: 0 auto;
+}
+
+/* --- Card --- */
+
+.certification-card {
+    display: grid;
+    grid-template-columns: 320px 1fr;
+    gap: 36px;
+    align-items: start;
+    padding: 32px;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), transparent 45%), var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    transition:
+        border-color var(--transition),
+        box-shadow var(--transition);
+}
+
+.certification-card:hover {
+    border-color: var(--accent-border);
+    box-shadow: var(--shadow-sm);
+}
+
+/* --- Image --- */
+
+.certification-image-link {
+    display: block;
+    position: relative;
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    cursor: pointer;
+    border: none;
+    padding: 0;
+    background: none;
+    width: 100%;
+}
+
+.certification-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: var(--radius-md);
+    transition: transform var(--transition);
+}
+
+.certification-image-link:hover .certification-image {
+    transform: scale(1.03);
+}
+
+.certification-image-overlay {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    background: rgba(11, 17, 32, 0.75);
+    backdrop-filter: blur(4px);
+    color: var(--text-primary);
+    font-size: 0.88rem;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+    opacity: 0;
+    transition: opacity var(--transition);
+}
+
+.certification-image-link:hover .certification-image-overlay {
+    opacity: 1;
+}
+
+/* --- Details --- */
+
+.certification-details {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+.certification-badge {
+    display: inline-block;
+    padding: 4px 11px;
+    margin-bottom: 12px;
+    border: 1px solid var(--accent-border);
+    border-radius: var(--radius-pill);
+    background: var(--accent-soft);
+    color: var(--accent);
+    font-size: 0.68rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    width: fit-content;
+}
+
+.certification-card h4 {
+    color: var(--text-primary);
+    font-size: 1.2rem;
+    letter-spacing: -0.01em;
+    line-height: 1.4;
+    margin-bottom: 4px;
+}
+
+.certification-issuer {
+    color: var(--accent);
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-bottom: 12px;
+}
+
+.certification-desc {
+    color: var(--text-muted);
+    font-size: 0.92rem;
+    line-height: 1.7;
+    margin-bottom: 14px;
+}
+
+/* --- Meta --- */
+
+.certification-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin-bottom: 14px;
+}
+
+.certification-date {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: var(--text-dim);
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
+.certification-date svg {
+    flex-shrink: 0;
+    color: var(--accent);
+    opacity: 0.7;
+}
+
+/* --- Tags --- */
+
+.certification-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-bottom: 20px;
+}
+
+.certification-tags span {
+    display: inline-block;
+    padding: 4px 10px;
+    border-radius: var(--radius-pill);
+    border: 1px solid var(--border);
+    background: var(--surface-tag);
+    color: var(--text-dim);
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.2px;
+}
+
+/* --- Links --- */
+
+.certification-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.certification-btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 11px 24px;
+    border-radius: var(--radius-pill);
+    background: var(--grad-accent);
+    border: 1px solid transparent;
+    box-shadow: 0 4px 18px rgba(56, 189, 248, 0.28),
+                inset 0 1px 0 rgba(255, 255, 255, 0.18);
+    color: var(--accent-contrast);
+    font-size: 0.88rem;
+    font-weight: 600;
+    letter-spacing: 0.2px;
+    text-decoration: none;
+    transition:
+        transform var(--transition),
+        box-shadow var(--transition);
+}
+
+.certification-btn-primary svg {
+    flex-shrink: 0;
+    width: 14px;
+    height: 14px;
+}
+
+.certification-btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 28px rgba(56, 189, 248, 0.45),
+                inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+.certification-btn-primary:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+}
+
+/* --- Lightbox --- */
+
+.cert-lightbox {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+    background: rgba(11, 17, 32, 0.92);
+    backdrop-filter: blur(12px);
+    opacity: 0;
+    visibility: hidden;
+    transition:
+        opacity 0.3s ease,
+        visibility 0.3s ease;
+}
+
+.cert-lightbox[hidden] {
+    display: flex;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+.cert-lightbox.active {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
+
+.cert-lightbox-close {
+    position: absolute;
+    top: 20px;
+    right: 24px;
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--radius-md);
+    border: 1px solid var(--border);
+    background: rgba(17, 24, 39, 0.8);
+    color: var(--text-secondary);
+    cursor: pointer;
+    transition:
+        border-color var(--transition),
+        color var(--transition);
+}
+
+.cert-lightbox-close:hover {
+    border-color: var(--accent-border);
+    color: var(--accent);
+}
+
+.cert-lightbox-image {
+    max-width: 90vw;
+    max-height: 85vh;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-lg);
+    object-fit: contain;
+}
+
+
+/* =========================================
    CONTACT
 ========================================= */
 
@@ -1974,6 +2257,26 @@ a.contact-info-value:focus-visible {
 
     .education-card-body {
         padding: 20px 20px;
+    }
+
+    /* Certifications */
+
+    .certification-card {
+        grid-template-columns: 1fr;
+        gap: 24px;
+        padding: 24px;
+    }
+
+    .certification-image-link {
+        max-width: 360px;
+    }
+
+    .cert-lightbox {
+        padding: 24px;
+    }
+
+    .cert-lightbox-image {
+        max-width: 95vw;
     }
 
     /* Footer */
