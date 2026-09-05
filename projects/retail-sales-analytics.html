@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="Case study of an end-to-end retail sales analytics project using SQL Server, Python, Excel and Power BI, covering revenue performance, customer segmentation, product returns and market trends.">
+
+    <title>
+        Retail Sales Analytics — Executive Dashboard | Placide Senadata
+    </title>
+
+    <link rel="stylesheet" href="../style.css">
+
+</head>
+
+
+<body>
+
+    <!-- Navigation -->
+
+    <header>
+
+        <nav>
+
+            <a href="../index.html" class="logo">
+                Placide Senadata
+            </a>
+
+            <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="nav-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <div class="nav-links" id="nav-menu">
+
+                <a href="../index.html#about">About</a>
+
+                <a href="../index.html#skills">Skills</a>
+
+                <a href="../index.html#projects">Projects</a>
+
+                <a href="../index.html#education">Education</a>
+
+                <a href="../index.html#contact">Contact</a>
+
+            </div>
+
+        </nav>
+
+    </header>
+
+
+    <!-- Project Introduction -->
+
+    <main>
+
+        <section class="project-hero">
+
+            <p class="project-type">
+                DATA ANALYTICS • BUSINESS INTELLIGENCE
+            </p>
+
+            <h1>
+                Retail Sales Analytics
+            </h1>
+
+            <p>
+                An executive dashboard delivering end-to-end retail
+                sales analysis using SQL Server, Python, Excel and Power
+                BI, covering revenue performance, customer segmentation,
+                product returns and market trends.
+            </p>
+
+        </section>
+
+
+        <!-- Dashboard -->
+
+        <section class="case-study-dashboard">
+
+            <img
+                src="../assets/images/retail-sales-dashboard.png"
+                alt="Retail Sales Analytics Executive Power BI Dashboard"
+            >
+
+        </section>
+
+
+        <!-- Project Overview -->
+
+        <section class="case-study">
+
+            <div class="case-study-grid">
+
+                <div>
+
+                    <h2>Project Overview</h2>
+
+                    <p>
+                        This project takes a large raw retail transaction
+                        dataset through data processing, SQL analysis,
+                        Excel validation and Power BI dashboard development.
+                    </p>
+
+                    <p>
+                        The dashboard brings revenue performance, customer
+                        segmentation, product returns and market trends
+                        together in an interactive executive view, supported
+                        by a validated source of truth in SQL Server.
+                    </p>
+
+                </div>
+
+
+                <div class="project-details">
+
+                    <h3>Tools & Technologies</h3>
+
+                    <p>SQL Server</p>
+                    <p>Python</p>
+                    <p>Excel / Power Query</p>
+                    <p>Power BI</p>
+
+                    <h3>Verified Revenue</h3>
+
+                    <p>£19,287,250.55</p>
+
+                </div>
+
+            </div>
+
+
+            <!-- Business Objective -->
+
+            <div class="case-study-section">
+
+                <h2>Business Objective</h2>
+
+                <p>
+                    The objective was to move from a large raw transaction
+                    dataset to a reliable, validated revenue position and
+                    an executive dashboard that makes retail performance
+                    easier to monitor and analyze.
+                </p>
+
+                <p>
+                    The analysis focuses on revenue performance, customer
+                    segmentation, product returns and market trends, with a
+                    strong emphasis on data validation and cross-checking
+                    across independent tools.
+                </p>
+
+            </div>
+
+
+            <!-- Data Validation -->
+
+            <div class="case-study-section">
+
+                <h2>Data Validation: Recovering £1.5M</h2>
+
+                <p>
+                    During analysis, a data validation issue was
+                    uncovered. One apparently high-performing product had
+                    only a single completed order, so the outlier was
+                    investigated further.
+                </p>
+
+                <p>
+                    The investigation revealed an 80,995-unit wholesale
+                    order that had been fully cancelled, but the
+                    cancellation had not been correctly accounted for in
+                    the revenue logic. This caused revenue to be
+                    overstated by approximately £1.5M.
+                </p>
+
+                <p>
+                    The logic was traced and corrected, and the corrected
+                    result was independently re-verified using SQL Server,
+                    Excel and Power BI. All three matched to the penny at
+                    £19,287,250.55.
+                </p>
+
+            </div>
+
+
+            <!-- Key Findings -->
+
+            <div class="case-study-section">
+
+                <h2>Key Findings</h2>
+
+                <div class="findings-grid">
+
+                    <div class="finding">
+
+                        <h3>Recurring November Peak</h3>
+
+                        <p>
+                            Revenue shows a recurring November peak,
+                            providing a useful signal for inventory and
+                            staffing planning.
+                        </p>
+
+                    </div>
+
+
+                    <div class="finding">
+
+                        <h3>Customer Concentration</h3>
+
+                        <p>
+                            Champions represent approximately 22% of
+                            customers but generate about 68% of revenue.
+                        </p>
+
+                    </div>
+
+
+                    <div class="finding">
+
+                        <h3>Wholesale-Driven Market</h3>
+
+                        <p>
+                            One apparently strong international market was
+                            heavily influenced by a small number of
+                            wholesale accounts rather than broad customer
+                            demand.
+                        </p>
+
+                    </div>
+
+
+                    <div class="finding">
+
+                        <h3>Elevated Return Rates</h3>
+
+                        <p>
+                            Certain novelty and decorative products showed
+                            return rates substantially above the business
+                            average.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- Analysis Overview -->
+
+            <div class="case-study-section">
+
+                <h2>Analysis Overview</h2>
+
+                <div class="findings-grid">
+
+                    <div class="finding">
+
+                        <h3>SQL Server</h3>
+
+                        <p>
+                            Database design, ETL and transactional-level
+                            analysis of the raw retail dataset.
+                        </p>
+
+                    </div>
+
+
+                    <div class="finding">
+
+                        <h3>Python</h3>
+
+                        <p>
+                            Data processing and ETL steps supporting the
+                            analytical pipeline.
+                        </p>
+
+                    </div>
+
+
+                    <div class="finding">
+
+                        <h3>Excel / Power Query</h3>
+
+                        <p>
+                            Independent validation and cross-checking of
+                            the corrected revenue result.
+                        </p>
+
+                    </div>
+
+
+                    <div class="finding">
+
+                        <h3>Power BI</h3>
+
+                        <p>
+                            Data modeling, DAX calculations and interactive
+                            executive dashboard development.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- Business Value -->
+
+            <div class="case-study-section">
+
+                <h2>Business Value</h2>
+
+                <p>
+                    The project demonstrates how a disciplined validation
+                    workflow protects the business from acting on incorrect
+                    numbers — in this case preventing £1.5M of overstated
+                    revenue from reaching decision-making.
+                </p>
+
+                <p>
+                    With a verified revenue position of £19,287,250.55
+                    matched to the penny across SQL Server, Excel and
+                    Power BI, the dashboard provides a reliable foundation
+                    for inventory, staffing and market planning.
+                </p>
+
+            </div>
+
+
+            <!-- Back -->
+
+            <div class="back-projects">
+
+                <a href="../index.html#projects">
+                    ← Back to Projects
+                </a>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <footer>
+
+        <p>
+            © 2026 Placide Senadata. All rights reserved.
+        </p>
+
+    </footer>
+
+    <script src="../script.js"></script>
+
+</body>
+
+</html>
