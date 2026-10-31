@@ -1216,6 +1216,8 @@ section h2 {
 .certifications-grid {
     max-width: 720px;
     margin: 0 auto;
+    display: grid;
+    gap: 28px;
 }
 
 /* --- Card --- */
@@ -1284,6 +1286,57 @@ section h2 {
 
 .certification-image-link:hover .certification-image-overlay {
     opacity: 1;
+}
+
+/* --- Document Preview --- */
+
+.certification-document-link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    min-height: 220px;
+    padding: 28px 24px;
+    border-radius: var(--radius-md);
+    border: 1px solid var(--border);
+    background:
+        radial-gradient(220px 140px at 50% 0%, rgba(56, 189, 248, 0.12), transparent 70%),
+        var(--surface-tag);
+    text-align: center;
+    transition:
+        border-color var(--transition),
+        transform var(--transition);
+}
+
+.certification-document-link:hover {
+    border-color: var(--accent-border);
+    transform: translateY(-2px);
+}
+
+.certification-document-link:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+}
+
+.certification-document-icon {
+    width: 54px;
+    height: 54px;
+    color: var(--accent);
+    opacity: 0.9;
+}
+
+.certification-document-title {
+    color: var(--text-primary);
+    font-size: 0.95rem;
+    font-weight: 600;
+    letter-spacing: 0.2px;
+}
+
+.certification-document-meta {
+    color: var(--text-muted);
+    font-size: 0.78rem;
+    line-height: 1.6;
 }
 
 /* --- Details --- */
@@ -2268,6 +2321,11 @@ a.contact-info-value:focus-visible {
     }
 
     .certification-image-link {
+        max-width: 360px;
+    }
+
+    .certification-document-link {
+        width: 100%;
         max-width: 360px;
     }
 
