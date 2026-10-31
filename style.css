@@ -611,6 +611,18 @@ section h2 {
     border-bottom: 1px solid var(--border);
 }
 
+.about-photo {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid var(--accent-border);
+    display: block;
+    margin: 0 auto 20px;
+    box-shadow: var(--shadow-md);
+    background: var(--surface-tag);
+}
+
 .profile-list {
     list-style: none;
     display: flex;
