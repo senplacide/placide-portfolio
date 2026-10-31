@@ -1,0 +1,869 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="Case study of Give Life — Predict Blood Donations, an end-to-end data analytics and machine learning project using the UCI Blood Transfusion Service Center dataset.">
+
+    <title>
+        Give Life — Predict Blood Donations | Placide Senadata
+    </title>
+
+    <link rel="stylesheet" href="../style.css">
+
+</head>
+
+
+<body>
+
+    <!-- Navigation -->
+
+    <header>
+
+        <nav>
+
+            <a href="../index.html" class="logo">
+                Placide Senadata
+            </a>
+
+            <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="nav-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <div class="nav-links" id="nav-menu">
+
+                <a href="../index.html#about">About</a>
+
+                <a href="../index.html#skills">Skills</a>
+
+                <a href="../index.html#projects">Projects</a>
+
+                <a href="../index.html#education">Education</a>
+
+                <a href="../index.html#contact">Contact</a>
+
+            </div>
+
+        </nav>
+
+    </header>
+
+
+    <!-- Project Introduction -->
+
+    <main>
+
+        <section class="project-hero">
+
+            <p class="project-type">
+                DATA ANALYTICS &amp; MACHINE LEARNING
+            </p>
+
+            <h1>
+                Give Life — Predict Blood Donations
+            </h1>
+
+            <p>
+                An end-to-end data analytics and machine learning project
+                using the UCI Blood Transfusion Service Center dataset.
+                Investigates historical donor patterns, examines data
+                quality, and develops a balanced Logistic Regression model
+                to estimate historical blood donation outcomes.
+            </p>
+
+        </section>
+
+
+        <!-- Dashboard -->
+
+        <section class="case-study-dashboard">
+
+            <img
+                src="../assets/images/Blood Donation Prediction Dashboard.png"
+                alt="Give Life — Predict Blood Donations dashboard preview"
+            >
+
+        </section>
+
+
+        <!-- Project Overview -->
+
+        <section class="case-study">
+
+            <div class="case-study-grid">
+
+                <div>
+
+                    <h2>Project Overview</h2>
+
+                    <p>
+                        Give Life — Predict Blood Donations investigates
+                        historical blood donation patterns and develops a
+                        classification model to estimate whether a donor made
+                        a blood donation in March 2007.
+                    </p>
+
+                    <p>
+                        The project uses the Blood Transfusion Service Center
+                        dataset from the UCI Machine Learning Repository.
+                    </p>
+
+                    <p>
+                        It combines exploratory data analysis, data quality
+                        investigation, feature analysis, model development,
+                        evaluation, and business interpretation.
+                    </p>
+
+                    <p>
+                        The objective is to demonstrate how historical data can
+                        support evidence-based decisions about donor outreach
+                        prioritization.
+                    </p>
+
+                </div>
+
+
+                <div class="project-details">
+
+                    <h3>Tools &amp; Technologies</h3>
+
+                    <p>Python</p>
+                    <p>Pandas</p>
+                    <p>Scikit-learn</p>
+                    <p>Matplotlib</p>
+                    <p>Jupyter Notebook</p>
+
+                    <h3>Dataset</h3>
+
+                    <p>UCI Blood Transfusion Service Center</p>
+
+                    <h3>Target</h3>
+
+                    <p>Donation in March 2007</p>
+
+                </div>
+
+            </div>
+
+
+            <!-- Business Problem -->
+
+            <div class="case-study-section">
+
+                <h2>Business Problem</h2>
+
+                <p>
+                    Blood donation services need to maintain reliable blood
+                    supplies while encouraging regular donations.
+                </p>
+
+                <p>
+                    The business question:
+                </p>
+
+                <p>
+                    <strong>
+                        Can historical donor information help estimate which
+                        donors made a donation in March 2007, and how might
+                        these estimates support donor outreach prioritization?
+                    </strong>
+                </p>
+
+                <div class="project-callout">
+                    This is decision-support analysis, not a replacement for
+                    donor screening, medical eligibility procedures, or human
+                    judgment.
+                </div>
+
+            </div>
+
+
+            <!-- Dataset -->
+
+            <div class="case-study-section">
+
+                <h2>Dataset</h2>
+
+                <p>
+                    The analysis uses the Blood Transfusion Service Center
+                    dataset from the UCI Machine Learning Repository.
+                </p>
+
+                <div class="project-table-wrap">
+
+                    <table class="project-table">
+
+                        <caption>Dataset summary</caption>
+
+                        <thead>
+                            <tr>
+                                <th scope="col">Measure</th>
+                                <th scope="col">Value</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <tr>
+                                <td>Observations</td>
+                                <td>748</td>
+                            </tr>
+                            <tr>
+                                <td>Columns</td>
+                                <td>5</td>
+                            </tr>
+                            <tr>
+                                <td>Non-donors</td>
+                                <td>570 (76.2%)</td>
+                            </tr>
+                            <tr>
+                                <td>Donors</td>
+                                <td>178 (23.8%)</td>
+                            </tr>
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+                <p>
+                    Features:
+                </p>
+
+                <ul class="project-list">
+
+                    <li>
+                        <strong>Recency:</strong> Months since the most recent
+                        donation.
+                    </li>
+
+                    <li>
+                        <strong>Frequency:</strong> Total recorded donations.
+                    </li>
+
+                    <li>
+                        <strong>Monetary:</strong> Total blood volume donated
+                        in cubic centimeters.
+                    </li>
+
+                    <li>
+                        <strong>Time:</strong> Months since the first donation.
+                    </li>
+
+                    <li>
+                        <strong>Target:</strong> Whether the donor donated in
+                        March 2007.
+                    </li>
+
+                </ul>
+
+                <p>
+                    Source:
+                    <a
+                        href="https://archive.ics.uci.edu/dataset/176/blood+transfusion+service+center"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="project-source-link"
+                    >
+                        UCI Machine Learning Repository — Blood Transfusion
+                        Service Center
+                    </a>
+                </p>
+
+            </div>
+
+
+            <!-- Data Quality -->
+
+            <div class="case-study-section">
+
+                <h2>Data Quality Investigation</h2>
+
+                <p>
+                    Data quality was investigated before modelling because
+                    the dataset contains repeated records and no donor
+                    identifier.
+                </p>
+
+                <div class="project-table-wrap">
+
+                    <table class="project-table">
+
+                        <caption>Exact-duplicate and conflict audit</caption>
+
+                        <thead>
+                            <tr>
+                                <th scope="col">Measure</th>
+                                <th scope="col">Result</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <tr>
+                                <td>
+                                    Exact duplicate rows identified using
+                                    pandas duplicated()
+                                </td>
+                                <td>215</td>
+                            </tr>
+                            <tr>
+                                <td>Rows involved in exact-duplicate groups</td>
+                                <td>275</td>
+                            </tr>
+                            <tr>
+                                <td>Unique exact rows</td>
+                                <td>533</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    Rows involved in duplicate predictor
+                                    profiles
+                                </td>
+                                <td>315</td>
+                            </tr>
+                            <tr>
+                                <td>Conflicting feature groups</td>
+                                <td>31</td>
+                            </tr>
+                            <tr>
+                                <td>Rows involved in conflicting groups</td>
+                                <td>200</td>
+                            </tr>
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+                <p>
+                    The 215 exact duplicate rows identified using pandas
+                    duplicated() exclude the first occurrence in each
+                    duplicate group. This is why 275 rows are involved in
+                    exact-duplicate groups while 533 unique exact rows remain.
+                </p>
+
+                <p>
+                    The dataset contains no donor identifier, so it cannot
+                    establish whether identical predictor profiles represent
+                    repeated records of the same donor or different donors.
+                    Duplicate records were retained rather than automatically
+                    removed.
+                </p>
+
+                <div class="project-callout">
+                    <strong>Monetary = 250 &times; Frequency.</strong>
+                    Monetary is therefore mathematically determined by
+                    Frequency and is not an independent information source.
+                </div>
+
+            </div>
+
+
+            <!-- Exploratory Analysis -->
+
+            <div class="case-study-section">
+
+                <h2>Exploratory Analysis</h2>
+
+                <p>
+                    The approximate target correlations were:
+                </p>
+
+                <div class="project-table-wrap">
+
+                    <table class="project-table">
+
+                        <caption>Approximate target correlations</caption>
+
+                        <thead>
+                            <tr>
+                                <th scope="col">Feature</th>
+                                <th scope="col">Correlation</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <tr>
+                                <td>Recency</td>
+                                <td>-0.280</td>
+                            </tr>
+                            <tr>
+                                <td>Frequency</td>
+                                <td>+0.219</td>
+                            </tr>
+                            <tr>
+                                <td>Monetary</td>
+                                <td>+0.219</td>
+                            </tr>
+                            <tr>
+                                <td>Time</td>
+                                <td>-0.036</td>
+                            </tr>
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+                <p>
+                    These are descriptive associations, not causal
+                    relationships.
+                </p>
+
+                <p>
+                    Monetary and Frequency should not be interpreted as
+                    independent evidence because Monetary is mathematically
+                    determined by Frequency.
+                </p>
+
+            </div>
+
+
+            <!-- Modelling Approach -->
+
+            <div class="case-study-section">
+
+                <h2>Modelling Approach</h2>
+
+                <p>
+                    The project used binary classification to estimate whether
+                    a donor made a donation in March 2007.
+                </p>
+
+                <div class="findings-grid">
+
+                    <div class="finding">
+
+                        <h3>Stratified Split</h3>
+
+                        <p>
+                            A stratified train-test split produced 561
+                            training observations and 187 test observations,
+                            using random_state=42.
+                        </p>
+
+                    </div>
+
+
+                    <div class="finding">
+
+                        <h3>Cross-Validation</h3>
+
+                        <p>
+                            Model evaluation used 5-fold StratifiedKFold
+                            cross-validation with shuffling enabled and
+                            random_state=123.
+                        </p>
+
+                    </div>
+
+
+                    <div class="finding">
+
+                        <h3>Training-Only Selection</h3>
+
+                        <p>
+                            Training-only cross-validation and out-of-fold
+                            predictions were used for model selection and
+                            threshold selection.
+                        </p>
+
+                    </div>
+
+
+                    <div class="finding">
+
+                        <h3>Binary Classification</h3>
+
+                        <p>
+                            The target represents whether a donor made a blood
+                            donation in March 2007.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- Final Model -->
+
+            <div class="case-study-section">
+
+                <h2>Final Model</h2>
+
+                <p>
+                    The final model was Balanced Logistic Regression —
+                    Configuration E.
+                </p>
+
+                <div class="project-table-wrap">
+
+                    <table class="project-table">
+
+                        <caption>Configuration E</caption>
+
+                        <thead>
+                            <tr>
+                                <th scope="col">Component</th>
+                                <th scope="col">Configuration</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <tr>
+                                <td>Algorithm</td>
+                                <td>Logistic Regression</td>
+                            </tr>
+                            <tr>
+                                <td>Solver</td>
+                                <td>liblinear</td>
+                            </tr>
+                            <tr>
+                                <td>Class weighting</td>
+                                <td>balanced</td>
+                            </tr>
+                            <tr>
+                                <td>Random state</td>
+                                <td>42</td>
+                            </tr>
+                            <tr>
+                                <td>Features</td>
+                                <td>Recency, Frequency, log(Monetary), Time</td>
+                            </tr>
+                            <tr>
+                                <td>Monetary transformation</td>
+                                <td>Logarithmic</td>
+                            </tr>
+                            <tr>
+                                <td>StandardScaler</td>
+                                <td>Not used</td>
+                            </tr>
+                            <tr>
+                                <td>Selected threshold</td>
+                                <td>0.35</td>
+                            </tr>
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+                <p>
+                    Configuration E achieved cross-validation Average
+                    Precision of approximately 0.5401, compared with
+                    approximately 0.5376 for Configuration D with balanced
+                    class weighting.
+                </p>
+
+                <p>
+                    The difference was marginal and does not demonstrate a
+                    large or definitive improvement.
+                </p>
+
+            </div>
+
+
+            <!-- Model Evaluation -->
+
+            <div class="case-study-section">
+
+                <h2>Model Evaluation</h2>
+
+                <p>
+                    The following results are from the held-out test set:
+                </p>
+
+                <div class="project-metrics">
+
+                    <div class="project-metric">
+                        <span class="project-metric-value">0.7902</span>
+                        <span class="project-metric-label">ROC-AUC</span>
+                    </div>
+
+                    <div class="project-metric">
+                        <span class="project-metric-value">0.5674</span>
+                        <span class="project-metric-label">Average Precision</span>
+                    </div>
+
+                    <div class="project-metric">
+                        <span class="project-metric-value">0.5294</span>
+                        <span class="project-metric-label">Accuracy</span>
+                    </div>
+
+                    <div class="project-metric">
+                        <span class="project-metric-value">0.3167</span>
+                        <span class="project-metric-label">Precision</span>
+                    </div>
+
+                    <div class="project-metric">
+                        <span class="project-metric-value">0.8636</span>
+                        <span class="project-metric-label">Recall</span>
+                    </div>
+
+                    <div class="project-metric">
+                        <span class="project-metric-value">0.4634</span>
+                        <span class="project-metric-label">F1-score</span>
+                    </div>
+
+                </div>
+
+                <div class="project-table-wrap">
+
+                    <table class="project-table project-table--matrix">
+
+                        <caption>Confusion matrix</caption>
+
+                        <thead>
+                            <tr>
+                                <th scope="col"></th>
+                                <th scope="col">Predicted: No Donation</th>
+                                <th scope="col">Predicted: Donation</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <tr>
+                                <th scope="row">Actual: No Donation</th>
+                                <td>61</td>
+                                <td>82</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Actual: Donation</th>
+                                <td>6</td>
+                                <td>38</td>
+                            </tr>
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+                <p>
+                    The model identified 38 of 44 actual positive cases,
+                    missed 6, and generated 82 false-positive predictions.
+                </p>
+
+                <p>
+                    The high recall means the model captured most actual
+                    donors in the test set, but the lower precision means many
+                    predicted donations were false positives. The model is not
+                    highly accurate overall and does not guarantee future
+                    donors.
+                </p>
+
+            </div>
+
+
+            <!-- Business Insights -->
+
+            <div class="case-study-section">
+
+                <h2>Business Insights and Recommendations</h2>
+
+                <div class="findings-grid">
+
+                    <div class="finding">
+
+                        <h3>Recency</h3>
+
+                        <p>
+                            Recency was the strongest simple feature
+                            association.
+                        </p>
+
+                    </div>
+
+
+                    <div class="finding">
+
+                        <h3>Historical Frequency</h3>
+
+                        <p>
+                            Historical Frequency showed a positive association.
+                        </p>
+
+                    </div>
+
+
+                    <div class="finding">
+
+                        <h3>False-Positive Burden</h3>
+
+                        <p>
+                            High recall comes with a substantial false-positive
+                            follow-up burden.
+                        </p>
+
+                    </div>
+
+
+                    <div class="finding">
+
+                        <h3>Data Quality</h3>
+
+                        <p>
+                            Data quality and missing donor identifiers limit
+                            interpretation.
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <h3 class="project-subheading">Proposed Applications</h3>
+
+                <p>
+                    These are proposed applications, not demonstrated
+                    operational outcomes.
+                </p>
+
+                <ul class="project-list">
+
+                    <li>
+                        Predictions could support exploratory outreach
+                        prioritization.
+                    </li>
+
+                    <li>
+                        Consider available outreach capacity and false-positive
+                        costs.
+                    </li>
+
+                    <li>
+                        Conduct a controlled real-world pilot before
+                        operational use.
+                    </li>
+
+                    <li>
+                        Improve donor identifiers and data collection.
+                    </li>
+
+                    <li>
+                        Maintain human oversight and all established medical
+                        screening procedures.
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+            <!-- Limitations -->
+
+            <div class="case-study-section">
+
+                <h2>Limitations and Transparency</h2>
+
+                <ul class="project-list">
+
+                    <li>
+                        The target is a historical March 2007 outcome, not a
+                        guaranteed future donation.
+                    </li>
+
+                    <li>
+                        The dataset is relatively small (748 observations).
+                    </li>
+
+                    <li>
+                        The target is imbalanced.
+                    </li>
+
+                    <li>
+                        Duplicate predictor profiles with conflicting targets
+                        exist.
+                    </li>
+
+                    <li>
+                        Donor identifiers are unavailable.
+                    </li>
+
+                    <li>
+                        Precision is relatively low despite high recall.
+                    </li>
+
+                    <li>
+                        The test set was used in earlier exploratory work and
+                        was not historically untouched throughout the entire
+                        project. Later model and threshold selection used
+                        training-only cross-validation and out-of-fold
+                        evaluation.
+                    </li>
+
+                    <li>
+                        No real-world pilot has demonstrated increased
+                        donations, reduced costs, or improved operations.
+                    </li>
+
+                    <li>
+                        The model does not assess medical eligibility or health
+                        status.
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+            <!-- Conclusion -->
+
+            <div class="case-study-section">
+
+                <h2>Conclusion</h2>
+
+                <p>
+                    The project demonstrates an end-to-end analytical process
+                    combining data quality investigation, exploratory
+                    analysis, machine learning, model evaluation,
+                    interpretation, and business-oriented recommendations.
+                </p>
+
+                <p>
+                    The final balanced Logistic Regression model achieved
+                    ROC-AUC 0.7902, Average Precision 0.5674, and recall
+                    86.36% on the held-out test set at threshold 0.35.
+                </p>
+
+                <p>
+                    Model results must be interpreted alongside data quality,
+                    operational capacity, and evidence limitations.
+                </p>
+
+            </div>
+
+
+            <!-- Back -->
+
+            <div class="back-projects">
+
+                <a href="../index.html#projects">
+                    ← Back to Projects
+                </a>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <footer>
+
+        <p>
+            © 2026 Placide Senadata. All rights reserved.
+        </p>
+
+    </footer>
+
+    <script src="../script.js"></script>
+
+</body>
+
+</html>
